@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+img{
+	background-size: cover;
+	margin-top: 50px;
+}
+.imgOnOff {
+	position: relative; 
+}
+.on { 
+	position: absolute;
+	bottom: 20px;
+	left: 30px;
+	border: 2px solid;
+	padding: 5px;
+	cursor: pointer;
+}
+.off {
+	background: red;
+	color: white;
+	border-color: red;
+}
+</style>
+</head>
+<body>
+ 
+
+<div class="card">
+  <div class='imgOnOff'>	
+    <img src="off.gif" alt="Denim Jeans" id='img'>
+	<div id='onOff' class='on'> X </div>
+  </div>
+  <h1> لمبة قلقوز </h1>
+  <p class="price">$19.99</p>
+  <p> لمبة اصلية مية بالمية عليها ضمان لمده عامين مع هديه مقعد لمبة و متر سلك كهرباء</p>
+  <p><button> اضافة الي السلة </button></p>
+</div>
+
+<script>
+	var btn = document.getElementById('onOff');
+	var img = document.getElementById('img');
+	
+	btn.onclick = ()=>{ 
+		btn.classList.toggle("off");
+		if(btn.className.includes('off')){
+			img.src = "on.gif";
+			console.log('on');
+		}else{
+			img.src = "off.gif";
+			console.log('off');
+		}
+	}
+</script>
+
+</body>
+</html>
